@@ -1,0 +1,370 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-color: rgb(19, 75, 112);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgb(2, 21, 38);
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .logo {
+    width: 120px;
+    height: auto;
+}
+
+main {
+    margin: 2rem auto;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#question-container {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: auto;
+    background: rgb(238, 238, 238);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    box-sizing: border-box;
+    align-content: center;
+}
+
+.left-section {
+    width: 40%;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.left-section img {
+    max-width: 100%;
+}
+
+.right-section {
+    width: 60%;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 100%;
+    background-color: rgb(3, 52, 110);
+    width: 0;
+    transition: width 0.3s;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+button {
+    background-color: rgb(80, 140, 155);
+    color: white;
+    border: none;
+    padding: 4px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: rgb(32, 30, 67);
+    transform: translateY(-2px);
+}
+
+button.prev,
+button.next {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: rgb(80, 140, 155);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
+}
+
+.next {
+    text-align: right;
+    padding-top: 30px;
+}
+
+button.prev {
+    font-size: 1.5rem;
+}
+
+button.prev:hover,
+button.next:hover {
+    color: rgb(32, 30, 67);
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 120px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.option img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #507A9B;
+    padding: 3px;
+    transition: border-color 0.3s;
+}
+
+.option:hover img {
+    border-color: #365670;
+}
+
+.option p {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.slider-container input[type="range"] {
+    width: 70%;
+}
+
+.slider-container output {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.upload-options {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.upload-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-option img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.upload-option p {
+    margin: 0;
+    color: #507A9B;
+}
+
+.upload-option input[type="file"] {
+    display: none;
+}
+
+.upload-option label {
+    background-color: #6C63FF;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.upload-option label:hover {
+    background-color: #584ED9;
+    transform: translateY(-2px);
+}
+
+#submit-upload {
+    background-color: #6C63FF;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#submit-upload:hover {
+    background-color: #584ED9;
+    transform: translateY(-2px);
+}
+
+#upload-section span {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #507A9B;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+button[type="submit"] {
+    background-color: rgb(80, 140, 155);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: rgb(32, 30, 67);
+    transform: translateY(-2px);
+}
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+
+    header .logo {
+        width: 100px;
+    }
+
+    main {
+        width: 95%;
+        margin: 1rem auto;
+    }
+
+
+    .options {
+        gap: 0.5rem;
+    }
+
+    .option {
+        width: 30%;
+        flex: 1 1 80px;
+    }
+
+    .option img {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+    .left-section,
+    .right-section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    #question-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-section img {
+        width: 100%;
+        height: 300px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"] {
+        width: 90%;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    button.prev,
+    button.next {
+        font-size: 1.5rem;
+    }
+}

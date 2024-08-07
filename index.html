@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>5amela Clinic</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <img src="images/logo.png" alt="Logo" class="logo">
+        </header>
+        <main>
+            <div id="question-container">
+                <div class="left-section">
+                    <img src="images/right_corner.jpg" alt="Illustration">
+                </div>
+                <div class="right-section">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="question active" id="welcome-screen">
+                        <img src="images/hand.png" alt="Welcome" style="width: 100px; margin-bottom: 1rem;">
+                        <h2>Welcome to 5amela!</h2>
+                        <p>We're excited to start providing you with the best hair transplant services. But first, so
+                            that we can personalize our recommendations for your needs, we have a few questions to ask
+                            you...</p>
+                        <button onclick="goToFirstQuestion()">Get started</button>
+                    </div>
+                    <div class="question" id="question1">
+                        <h2>Please Choose Your Gender</h2>
+                        <div class="options">
+                            <div class="option">
+                                <img src="images/male.png" alt="Male">
+                                <p>Male</p>
+                            </div>
+                            <div class="option">
+                                <img src="images/female.png" alt="Female">
+                                <p>Female</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question" id="question2">
+                        <div class="navigation">
+                            <button class="prev" onclick="prevQuestion()">&#9664;</button>
+                        </div>
+                        <h2>How Would You Describe Your Hair Loss?</h2>
+                        <div class="options">
+                            <div class="option">
+                                <img src="images/stage1.png" alt="Stage 1">
+                                <p>Stage 1</p>
+                            </div>
+                            <div class="option">
+                                <img src="images/stage2.png" alt="Stage 2">
+                                <p>Stage 2</p>
+                            </div>
+                            <div class="option">
+                                <img src="images/stage3.png" alt="Stage 3">
+                                <p>Stage 3</p>
+                            </div>
+                            <div class="option">
+                                <img src="images/stage4.png" alt="Stage 4">
+                                <p>Stage 4</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question" id="question3">
+                        <div class="navigation">
+                            <button class="prev" onclick="prevQuestion()">&#9664;</button>
+                        </div>
+                        <h2>Since When Do You Suffer From Hair Loss?</h2>
+                        <div class="slider-container">
+                            <input type="range" id="hair-loss-duration" name="hair-loss-duration" min="1" max="10"
+                                value="1" oninput="this.nextElementSibling.value = this.value">
+                            <output>1</output> Year(s)
+                        </div>
+                        <div class="next">
+                            <button id="next">Next</button>
+                        </div>
+                    </div>
+                    <div class="question" id="question4">
+                        <div class="navigation">
+                            <button class="prev" onclick="prevQuestion()">&#9664;</button>
+                        </div>
+                        <h2>How Soon Would You Like Treatment?</h2>
+                        <div class="options">
+                            <div class="option">
+                                <p>As soon as possible</p>
+                            </div>
+                            <div class="option">
+                                <p>In the next 3 months</p>
+                            </div>
+                            <div class="option">
+                                <p>In the next 12 months</p>
+                            </div>
+                            <div class="option">
+                                <p>I only want information</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="question" id="upload-section">
+                        <div class="navigation">
+                            <button class="prev" onclick="prevQuestion()">&#9664;</button>
+                        </div>
+                        <h2>Upload Your Hair Photos to Get a Closer Appointment</h2>
+                        <p>Click on the icons below to upload</p>
+                        <div class="upload-options">
+                            <div class="upload-option">
+                                <img id="img-above" src="images/Top_view.png" alt="Top View">
+                                <p>From Above</p>
+                                <label for="upload-above">Upload</label>
+                                <input type="file" id="upload-above" accept="image/*"
+                                    onchange="previewImage('img-above', event)">
+                            </div>
+                            <div class="upload-option">
+                                <img id="img-behind" src="images/back-view.png" alt="Back View">
+                                <p>From Behind</p>
+                                <label for="upload-behind">Upload</label>
+                                <input type="file" id="upload-behind" accept="image/*"
+                                    onchange="previewImage('img-behind', event)">
+                            </div>
+                            <div class="upload-option">
+                                <img id="img-front" src="images/front-view.png" alt="Front View">
+                                <p>From Front</p>
+                                <label for="upload-front">Upload</label>
+                                <input type="file" id="upload-front" accept="image/*"
+                                    onchange="previewImage('img-front', event)">
+                            </div>
+                        </div>
+                        <p>100% free. <span>Secure data transfer.</span></p>
+                        <button id="submit-upload">Upload Photos</button>
+                    </div>
+                    <div class="question" id="contact-section">
+                        <div class="navigation">
+                            <button class="prev" onclick="prevQuestion()">&#9664;</button>
+                        </div>
+                        <h2>Please Enter Your Contact Information</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="" required>
+                            </div>
+                            <button type="submit">Get Your Quote Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+
+</html>
